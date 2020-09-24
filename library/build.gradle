@@ -55,5 +55,3 @@ dependencies {
     api 'com.liulishuo.okdownload:okdownload:1.0.7'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
-
-apply from:'bintrayUpload.gradle'
