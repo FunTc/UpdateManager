@@ -1,150 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/ivTopImg"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:src="@mipmap/img_version_dialog_top_bg"
         tools:ignore="ContentDescription" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <View
+        android:id="@+id/viewBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivTopImg"
+        app:layout_constraintBottom_toBottomOf="@id/space"
+        android:background="@drawable/shape_default_update_version_dialog_bg"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="10dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:paddingBottom="15dp"
-        android:background="@drawable/shape_default_update_version_dialog_bg">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivTopImg"
+        android:layout_marginTop="10dp"
+        tools:text="发现新版本（2.0.1）"
+        android:shadowColor="#000000"
+        android:shadowRadius="1"
+        android:textColor="#222222"
+        android:textSize="14.5sp"/>
+
+    <com.tclibrary.updatemanager.ui.MaxHeightScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:requiresFadingEdge="vertical"
+        android:fadingEdgeLength="10dp"
+        app:mhsv_maxHeight="150dp">
 
         <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            tools:text="发现新版本（2.0.1）"
-            android:shadowColor="#000000"
-            android:shadowRadius="1"
-            android:textColor="#222222"
-            android:textSize="14.5sp"/>
-        
-        <com.tclibrary.updatemanager.ui.MaxHeightScrollView
+            android:id="@+id/tvUpdateLog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:requiresFadingEdge="vertical"
-            android:fadingEdgeLength="10dp"
-            android:layout_marginTop="10dp"
-            app:mhsv_maxHeight="150dp">
-
-            <TextView
-                android:id="@+id/tvUpdateLog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="1. aaaaaaaaaa\n2. bbbbbbbbbb"
-                android:lineSpacingExtra="2.8dp"
-                android:textColor="#5b5b5b"
-                android:textSize="13sp"/>
-            
-        </com.tclibrary.updatemanager.ui.MaxHeightScrollView>
-
-        <TextView
-            tools:visibility="visible"
-            android:id="@+id/btnUpdate"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:background="@drawable/selector_um_oval_btn_red"
-            android:text="升级"
-            android:textColor="@android:color/white"
+            tools:text="1. aaaaaaaaaa\n2. bbbbbbbbbb"
+            android:lineSpacingExtra="2.8dp"
+            android:textColor="#5b5b5b"
             android:textSize="13sp"/>
 
-        <TextView
-            tools:visibility="gone"
-            android:visibility="gone"
-            android:id="@+id/btnIgnore"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:background="@drawable/selector_um_oval_border_btn_red"
-            android:text="忽略此版本"
-            android:textColor="@color/um_lib_color_red_lesser"
-            android:textSize="13sp" />
+    </com.tclibrary.updatemanager.ui.MaxHeightScrollView>
 
-        <com.daimajia.numberprogressbar.NumberProgressBar
-            tools:visibility="gone"
-            android:visibility="gone"
-            android:id="@+id/progressBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:progress_max="100"
-            app:progress_current="0"
-            app:progress_unreached_color="@color/um_lib_color_gray"
-            app:progress_reached_color="@color/um_lib_color_red_lesser"
-            app:progress_text_size="12sp"
-            app:progress_text_color="@color/um_lib_color_red_lesser"
-            app:progress_reached_bar_height="3dp"
-            app:progress_unreached_bar_height="3dp" />
+    <TextView
+        tools:visibility="visible"
+        android:id="@+id/btnUpdate"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:background="@drawable/selector_um_oval_btn_red"
+        android:text="升级"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"/>
 
+    <TextView
+        tools:visibility="gone"
+        android:visibility="gone"
+        android:id="@+id/btnIgnore"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnUpdate"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="@drawable/selector_um_oval_border_btn_red"
+        android:text="忽略此版本"
+        android:textColor="@color/um_lib_color_red_lesser"
+        android:textSize="13sp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        tools:visibility="gone"
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        app:progress_max="100"
+        app:progress_current="0"
+        app:progress_unreached_color="@color/um_lib_color_gray"
+        app:progress_reached_color="@color/um_lib_color_red_lesser"
+        app:progress_text_size="12sp"
+        app:progress_text_color="@color/um_lib_color_red_lesser"
+        app:progress_reached_bar_height="3dp"
+        app:progress_unreached_bar_height="3dp" />
 
-            <TextView
-                tools:visibility="gone"
-                android:visibility="gone"
-                android:id="@+id/btnCancelDownload"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?android:selectableItemBackground"
-                android:gravity="center"
-                android:padding="5dp"
-                android:layout_marginTop="10dp"
-                android:textSize="11sp"
-                android:textColor="@color/um_lib_color_red_lesser"
-                android:text="取消下载"
-                tools:ignore="SmallSp" />
+    <TextView
+        tools:visibility="gone"
+        android:visibility="gone"
+        android:id="@+id/btnCancelDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDownloadInBg"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:textSize="11sp"
+        android:textColor="@color/um_lib_color_red_lesser"
+        android:text="取消下载"
+        tools:ignore="SmallSp" />
 
-            <TextView
-                tools:visibility="gone"
-                android:visibility="gone"
-                android:id="@+id/btnDownloadInBg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?android:selectableItemBackground"
-                android:gravity="center"
-                android:padding="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:textSize="11sp"
-                android:textColor="@color/um_lib_color_red_lesser"
-                android:text="后台下载"
-                tools:ignore="SmallSp" />
+    <TextView
+        tools:visibility="gone"
+        android:visibility="gone"
+        android:id="@+id/btnDownloadInBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btnCancelDownload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:textSize="11sp"
+        android:textColor="@color/um_lib_color_red_lesser"
+        android:text="后台下载"
+        tools:ignore="SmallSp" />
 
-        </LinearLayout>
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="btnUpdate,btnIgnore,progressBar,btnCancelDownload,btnDownloadInBg"/>
 
-    </LinearLayout>
+    <Space
+        android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier"/>
 
     <ImageView
         android:id="@+id/ivClose"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/viewBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="7dp"
         android:src="@mipmap/ic_um_close"
         tools:ignore="ContentDescription" />
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

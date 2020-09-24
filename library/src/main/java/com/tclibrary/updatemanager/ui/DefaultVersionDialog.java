@@ -134,7 +134,6 @@ public class DefaultVersionDialog extends AbsVersionDialog implements View.OnCli
         Dialog dialog = getDialog();
         if (dialog != null) {
             dialog.setCanceledOnTouchOutside(false);
-            dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         }
     }
 

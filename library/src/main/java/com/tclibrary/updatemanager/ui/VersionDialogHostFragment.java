@@ -1,7 +1,6 @@
 package com.tclibrary.updatemanager.ui;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.tclibrary.updatemanager.Constant;
 import com.tclibrary.updatemanager.UpdateManager;
@@ -55,19 +54,6 @@ public class VersionDialogHostFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.e("tian", "onStart");
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.e("tian", "onPause");
-        
-    }
-
-    @Override
-    public void onDestroy() {
-        Log.e("tian", "onDestroy");
-        super.onDestroy();
-    }
 }
