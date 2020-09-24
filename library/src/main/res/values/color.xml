@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="um_lib_color_red">#E12B2B</color>
+    <color name="um_lib_color_red_lesser">#E64747</color>
+    <color name="um_lib_color_red_lesser1">#25E64747</color>
+    <color name="um_lib_color_black">#333333</color>
+    <color name="um_lib_color_black_lesser">#666666</color>
+    <color name="um_lib_color_gray">#cccccc</color>
+    
+</resources>
