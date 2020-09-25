@@ -1,4 +1,4 @@
-# UpdateManager
+# UpdateManager  ![GitHub](https://img.shields.io/github/license/FunTc/UpdateManager) ![Bintray](https://img.shields.io/bintray/v/funtc/Android/UpdateManager?color=orange)
 An android library of check for update
 
 
