@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import androidx.annotation.NonNull;
 
 /**
- * Created by TianCheng on 2020/08/10.
+ * Created by FunTc on 2020/08/10.
  */
 public final class FileDownloader {
 

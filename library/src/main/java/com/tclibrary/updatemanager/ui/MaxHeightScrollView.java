@@ -8,7 +8,7 @@ import android.widget.ScrollView;
 import com.tclibrary.updatemanager.R;
 
 /**
- * Created by TianCheng on 2020/09/10.
+ * Created by FunTc on 2020/09/10.
  */
 public class MaxHeightScrollView extends ScrollView {
 
