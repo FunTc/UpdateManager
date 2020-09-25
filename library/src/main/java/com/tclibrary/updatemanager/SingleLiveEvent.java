@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 /**
- * Created by TianCheng on 2020/09/09.
+ * Created by FunTc on 2020/09/09.
  */
 class SingleLiveEvent<T> extends MutableLiveData<T> {
 

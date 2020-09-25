@@ -3,7 +3,7 @@ package com.tclibrary.updatemanager.download;
 import java.io.File;
 
 /**
- * Created by TianCheng on 2020/08/10.
+ * Created by FunTc on 2020/08/10.
  */
 public interface FileDownloadListener {
     

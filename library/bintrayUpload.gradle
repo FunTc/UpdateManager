@@ -16,7 +16,7 @@ publish {
     groupId = 'com.funtc.xlib'    
     artifactId = 'UpdateManager'
     publishVersion = rootProject.ext.libVer.versionName
-    desc = 'Android Application check update library'
+    desc = 'An android library of check for update'
     website = 'https://github.com/FunTc/UpdateManager'
 
     bintrayUser = user
